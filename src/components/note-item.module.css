@@ -1,0 +1,11 @@
+.note {
+  @apply mb-8;
+
+  h2 {
+    @apply text-2xl font-bold leading-tight;
+  }
+
+  p {
+    @apply text-gray-600 leading-normal;
+  }
+}
