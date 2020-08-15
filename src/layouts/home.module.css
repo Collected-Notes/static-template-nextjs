@@ -1,0 +1,15 @@
+.section {
+  @apply max-w-prose mx-auto px-10;
+}
+
+.nav {
+  @apply mb-6 max-w-screen-md mx-auto px-10 flex justify-end;
+
+  a {
+    @apply flex items-center text-lg font-semibold;
+
+    span {
+      @apply ml-1;
+    }
+  }
+}
