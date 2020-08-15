@@ -1,0 +1,15 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+
+html {
+  font-size: 16px;
+  @apply bg-white text-black antialiased;
+}
+
+body {
+  margin: 0;
+}
+
+/* purgecss end ignore */
+@tailwind utilities;
