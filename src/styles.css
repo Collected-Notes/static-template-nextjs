@@ -1,14 +1,14 @@
 /* purgecss start ignore */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 
 html {
-  font-size: 16px;
-  @apply bg-white text-black antialiased;
+  @apply bg-gray-100 text-gray-900 antialiased;
 }
 
 body {
-  margin: 0;
+  @apply m-0;
 }
 
 /* purgecss end ignore */
