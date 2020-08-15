@@ -1,0 +1,10 @@
+.header {
+  @apply mt-6 mb-6 max-w-screen-md mx-auto px-6;
+
+  h1 {
+    @apply text-5xl font-bold;
+  }
+  p {
+    @apply text-xl leading-normal whitespace-pre-wrap;
+  }
+}
