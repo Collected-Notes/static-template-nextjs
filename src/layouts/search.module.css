@@ -1,0 +1,28 @@
+.form {
+  @apply max-w-screen-md mx-auto px-6 mb-12;
+
+  label {
+    @apply text-4xl font-bold flex items-center;
+  }
+
+  div {
+    @apply relative;
+    svg {
+      top: 14px;
+      left: 12px;
+      bottom: 14px;
+      @apply absolute w-5 h-5 z-20 text-black;
+    }
+  }
+
+  input {
+    @apply py-3 pr-6 pl-10 rounded-lg text-gray-900 bg-gray-300 block w-full font-semibold relative z-10;
+    &:focus {
+      @apply outline-none shadow-outline;
+    }
+  }
+}
+
+.section {
+  @apply max-w-prose mx-auto px-10;
+}
