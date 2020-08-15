@@ -1,0 +1,40 @@
+.article {
+  @apply mx-auto px-10;
+}
+
+.footer {
+  @apply max-w-prose mx-auto px-10 border-t border-gray-500 mt-6 py-6 mb-12;
+
+  time {
+    @apply text-gray-700 leading-normal;
+  }
+
+  p {
+    @apply text-2xl font-bold leading-normal;
+  }
+}
+
+.aside {
+  @apply max-w-prose mx-auto px-10 border-t border-gray-500 mt-6 py-6 mb-12;
+
+  p {
+    @apply font-bold leading-normal;
+  }
+
+  li {
+    list-style-position: outside;
+    @apply mt-1 ml-8;
+  }
+
+  span {
+    @apply text-gray-700;
+  }
+
+  a {
+    @apply font-bold underline;
+  }
+}
+
+.internal {
+  list-style-type: square;
+}
