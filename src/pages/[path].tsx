@@ -23,7 +23,9 @@ export const getStaticProps: GetStaticProps<
 export const getStaticPaths: GetStaticPaths<ArticlePageQuery> = async () => {
   const notes = await cn.latestNotes(Number(process.env.CN_SITE_ID));
   return {
-    paths: notes.map((note) => ({ params: { path: note.path } })),
+    paths: notes
+      .filter((note) => note.visibility === "public")
+      .map((note) => ({ params: { path: note.path } })),
     fallback: false,
   };
 };
