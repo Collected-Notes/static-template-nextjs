@@ -1,14 +1,19 @@
 /* purgecss start ignore */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 
-html {
-  @apply bg-gray-100 text-gray-900 antialiased;
+body {
+  @apply m-0 antialiased;
 }
 
-body {
-  @apply m-0;
+body.scheme-light {
+  @apply bg-gray-100 text-gray-900;
+}
+
+body.scheme-dark {
+  @apply bg-gray-900 text-gray-100;
 }
 
 /* purgecss end ignore */

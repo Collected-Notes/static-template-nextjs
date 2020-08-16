@@ -3,10 +3,10 @@
 }
 
 .footer {
-  @apply max-w-prose mx-auto px-10 border-t border-gray-500 mt-6 py-6 mb-12;
+  @apply max-w-prose mx-auto px-10 border-t border-gray-500 mt-6 pt-6 mb-6;
 
   time {
-    @apply text-gray-700 leading-normal;
+    @apply text-gray-600 leading-normal;
   }
 
   p {
@@ -15,7 +15,7 @@
 }
 
 .aside {
-  @apply max-w-prose mx-auto px-10 border-t border-gray-500 mt-6 py-6 mb-12;
+  @apply max-w-prose mx-auto px-10 border-t border-gray-500 mt-6 py-6 mb-6;
 
   p {
     @apply font-bold leading-normal;
@@ -27,7 +27,7 @@
   }
 
   span {
-    @apply text-gray-700;
+    @apply text-gray-600;
   }
 
   a {

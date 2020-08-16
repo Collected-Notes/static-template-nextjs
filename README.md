@@ -14,6 +14,7 @@ Next.js-based template of a static site built using the Collected Notes API.
 - [TailwindCSS](https://tailwindcss.com)
 - [SWR](https://swr.vercel.app)
 - [React Icons](https://react-icons.github.io/react-icons/)
+- [useDarkMode](https://github.com/donavon/use-dark-mode)
 
 ## Required Environment Variables
 

@@ -1,7 +1,15 @@
+import * as React from "react";
 import Head from "next/head";
-import "../styles.css";
+import useDarkMode from "use-dark-mode";
+import { DarkModeToggle } from "components/dark-mode-toggle";
+import "styles.css";
 
 export default function App({ Component, pageProps }) {
+  useDarkMode(false, {
+    classNameDark: "scheme-dark",
+    classNameLight: "scheme-light",
+  });
+
   return (
     <>
       <Head>
@@ -76,7 +84,11 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
 
-      <main role="document">
+      <main role="document" className="relative">
+        <div style={{ position: "absolute", top: 16, right: 16 }}>
+          <DarkModeToggle />
+        </div>
+
         <Component {...pageProps} />
       </main>
     </>

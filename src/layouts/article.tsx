@@ -13,7 +13,7 @@ export function ArticleLayout({ note, site, body, links }: ArticlePageProps) {
       <Header name={site.name} headline={site.headline} />
 
       <article
-        className={clsx(styles.article, "prose")}
+        className={clsx(styles.article, "prose dark:prose-dark")}
         dangerouslySetInnerHTML={{ __html: body }}
       />
 
@@ -29,21 +29,25 @@ export function ArticleLayout({ note, site, body, links }: ArticlePageProps) {
         </p>
       </footer>
 
-      <aside className={styles.aside}>
-        <p>Links on this note↗</p>
+      {links.length > 0 ? (
+        <aside className={styles.aside}>
+          <p>Links on this note↗</p>
 
-        <ul>
-          {links.map((link) => {
-            const isInternal = link.kind === "internal";
-            return (
-              <li className={clsx({ [styles.internal]: isInternal })}>
-                <a href={link.url}>{link.host}</a>
-                <span>{parse(link.url).pathname}</span>
-              </li>
-            );
-          })}
-        </ul>
-      </aside>
+          <ul>
+            {links.map((link) => {
+              const isInternal = link.kind === "internal";
+              return (
+                <li className={clsx({ [styles.internal]: isInternal })}>
+                  <a href={link.url} title={link.title}>
+                    {link.host}
+                  </a>
+                  <span>{parse(link.url).pathname}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </aside>
+      ) : null}
     </>
   );
 }
