@@ -1,0 +1,14 @@
+.button {
+  @apply bg-black p-2 rounded-full flex items-center relative;
+
+  svg + svg {
+    @apply ml-3;
+  }
+
+  span {
+    @apply absolute w-8 h-8 bg-white rounded-full transition-all duration-200 border border-black;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
