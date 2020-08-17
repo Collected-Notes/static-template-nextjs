@@ -3,8 +3,26 @@ import useDarkMode from "use-dark-mode";
 import { FaSun, FaMoon } from "react-icons/fa";
 import styles from "components/dark-mode-toggle.module.css";
 
-export function DarkModeToggle() {
-  const { toggle, value } = useDarkMode();
+function withMounted(Component: () => JSX.Element) {
+  return () => {
+    const [isMounted, setIsMounted] = React.useState(false);
+    React.useEffect(() => {
+      setIsMounted(true);
+      return () => setIsMounted(false);
+    }, []);
+    if (!isMounted) return null;
+    return <Component />;
+  };
+}
+
+export const DarkModeToggle = withMounted(function DarkModeToggle() {
+  const { value, toggle } = useDarkMode(
+    window.matchMedia("(preferred-color-scheme: dark)").matches,
+    {
+      classNameDark: "scheme-dark",
+      classNameLight: "scheme-light",
+    }
+  );
 
   const label = value ? "Disable dark mode" : "Enable dark mode";
 
@@ -17,4 +35,4 @@ export function DarkModeToggle() {
       />
     </button>
   );
-}
+});
