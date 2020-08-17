@@ -2,12 +2,24 @@ import * as React from "react";
 import { parse } from "url";
 import clsx from "clsx";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 import { formatDistanceToNow } from "date-fns";
 import { ArticlePageProps } from "types";
 import { Header } from "components/header";
 import styles from "layouts/article.module.css";
+import { FaSpinner } from "react-icons/fa";
 
 export function ArticleLayout({ note, site, body, links }: ArticlePageProps) {
+  const { isFallback } = useRouter();
+
+  if (isFallback) {
+    return (
+      <div className={styles.spinner}>
+        <FaSpinner className="animate-spin-slow" size={64} />
+      </div>
+    );
+  }
+
   return (
     <>
       <Header name={site.name} headline={site.headline} />

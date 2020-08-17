@@ -9,6 +9,10 @@ module.exports = {
         prose: "65ch",
       },
 
+      animation: {
+        'spin-slow': 'spin 1.5s linear infinite',
+      },
+
       typography: (theme) => ({
         dark: {
           css: {

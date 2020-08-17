@@ -6,7 +6,7 @@ export default class CNDocument extends Document {
       <Html>
         <Head />
         <body>
-          <script src="noflash.js" />
+          <script src="dark-mode.js" />
           <Main />
           <NextScript />
         </body>

@@ -17,16 +17,16 @@ export const getStaticProps: GetStaticProps<
     cn.links(site.id, note.id, "json"),
     cn.body(site.id, note.id),
   ]);
-  return { props: { note, site, body, links } };
+  return { props: { note, site, body, links }, revalidate: 1 };
 };
 
 export const getStaticPaths: GetStaticPaths<ArticlePageQuery> = async () => {
-  const notes = await cn.latestNotes(Number(process.env.CN_SITE_ID));
+  const { notes } = await cn.site(process.env.CN_SITE_PATH);
   return {
     paths: notes
-      .filter((note) => note.visibility === "public")
+      .filter(note => !note.path.includes("/"))
       .map((note) => ({ params: { path: note.path } })),
-    fallback: false,
+    fallback: true,
   };
 };
 
