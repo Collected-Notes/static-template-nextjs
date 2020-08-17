@@ -9,7 +9,7 @@ Next.js-based template of a static site built using the Collected Notes API.
 ## Features
 
 - **Dark Mode Support** - Detect from system preference and per-site support user preference
-- **Link on the note** - List all the links used at the bottom of each note
+- **Links on the note** - List all the links used at the bottom of each note
 - **Search** - Search between all of your notes
 - **Incremental Generation** - Deploy once and get incremental updates on your site
 
