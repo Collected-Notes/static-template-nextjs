@@ -3,15 +3,15 @@ import useDarkMode from "use-dark-mode";
 import { FaSun, FaMoon } from "react-icons/fa";
 import styles from "components/dark-mode-toggle.module.css";
 
-function withMounted(Component: () => JSX.Element) {
-  return () => {
+function withMounted<Props>(Component: (props: Props) => JSX.Element) {
+  return (props: Props) => {
     const [isMounted, setIsMounted] = React.useState(false);
     React.useEffect(() => {
       setIsMounted(true);
       return () => setIsMounted(false);
     }, []);
     if (!isMounted) return null;
-    return <Component />;
+    return <Component {...props} />;
   };
 }
 
