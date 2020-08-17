@@ -5,14 +5,14 @@ import styles from "layouts/search.module.css";
 import { useSearch } from "queries/use-search";
 import { Header } from "components/header";
 import { NoteItem } from "components/note-item";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaSpinner } from "react-icons/fa";
 import useDarkMode from "use-dark-mode";
 
 export function SearchLayout({ site }: SearchPageProps) {
   const [value, setValue] = React.useState("");
   const darkMode = useDarkMode(false);
 
-  const { data: notes, error } = useSearch(value);
+  const { data: notes, error, isValidating, mutate } = useSearch(value);
 
   return (
     <>
@@ -38,12 +38,27 @@ export function SearchLayout({ site }: SearchPageProps) {
         </div>
       </form>
 
+      {(!error && !notes && value !== "") || isValidating ? (
+        <div className={styles.loading}>
+          <FaSpinner className="animate-spin" />
+        </div>
+      ) : null}
+
       <section className={styles.section}>
-        {!error && notes?.map((note) => <NoteItem key={note.id} note={note} />)}
+        {error ? (
+          <p>
+            An error happened while searching the notes,{" "}
+            <button type="button" onClick={() => mutate()}>
+              try again.
+            </button>
+          </p>
+        ) : null}
+        {notes?.map((note) => (
+          <NoteItem key={note.id} note={note} />
+        ))}
         {notes?.length === 0 ? (
           <p>There are no notes matching your search term.</p>
         ) : null}
-        {error ? <p>{error}</p> : null}
       </section>
     </>
   );

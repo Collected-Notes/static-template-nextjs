@@ -6,7 +6,7 @@
   }
 
   div {
-    @apply relative mx-8 mt-8;
+    @apply relative mx-8 mt-4;
     svg {
       top: 14px;
       left: 12px;
@@ -26,4 +26,8 @@
 
 .section {
   @apply max-w-prose mx-auto px-10;
+}
+
+.loading {
+  @apply max-w-prose mx-auto px-10 flex justify-center -mt-8 mb-4;
 }
