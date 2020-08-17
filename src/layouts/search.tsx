@@ -53,9 +53,11 @@ export function SearchLayout({ site }: SearchPageProps) {
             </button>
           </p>
         ) : null}
+
         {notes?.map((note) => (
           <NoteItem key={note.id} note={note} />
         ))}
+
         {notes?.length === 0 ? (
           <p>There are no notes matching your search term.</p>
         ) : null}
