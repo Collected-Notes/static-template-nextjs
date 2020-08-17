@@ -9,14 +9,13 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* HTML Meta Tags */}
+        <title>Collected Notes</title>
         <meta
           name="description"
           content="The simplest, and most powerful note-taking blogging platform."
         />
-
-        {/* HTML Meta Tags */}
-        <title>Collected Notes</title>
-        <meta name="description" content="Simply your notes." />
         <meta
           name="image"
           content="https://photos.collectednotes.com/embed.png"
