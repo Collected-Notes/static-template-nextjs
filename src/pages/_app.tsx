@@ -85,7 +85,7 @@ export default function App({ Component, pageProps }) {
       </Head>
 
       <main role="document" className="relative">
-        <div style={{ position: "absolute", top: 16, right: 16 }}>
+        <div className="flex justify-end pt-4 pr-4 -mb-6 md:absolute md:top-0 md:right-0">
           <DarkModeToggle />
         </div>
 
