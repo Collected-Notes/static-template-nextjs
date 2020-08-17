@@ -16,5 +16,9 @@ body.scheme-dark {
   @apply bg-gray-900 text-gray-100;
 }
 
+main {
+  @apply relative;
+}
+
 /* purgecss end ignore */
 @tailwind utilities;

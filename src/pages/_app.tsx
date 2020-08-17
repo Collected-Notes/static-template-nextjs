@@ -1,15 +1,9 @@
 import * as React from "react";
 import Head from "next/head";
-import useDarkMode from "use-dark-mode";
 import { DarkModeToggle } from "components/dark-mode-toggle";
 import "styles.css";
 
 export default function App({ Component, pageProps }) {
-  useDarkMode(false, {
-    classNameDark: "scheme-dark",
-    classNameLight: "scheme-light",
-  });
-
   return (
     <>
       <Head>
@@ -84,7 +78,7 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
 
-      <main role="document" className="relative">
+      <main role="document">
         <div className="flex justify-end pt-4 pr-4 -mb-6 md:absolute md:top-0 md:right-0">
           <DarkModeToggle />
         </div>
