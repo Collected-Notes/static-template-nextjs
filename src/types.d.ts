@@ -7,7 +7,7 @@ export type ArticlePageProps = {
   links: Link[];
 };
 
-export type ArticlePageQuery = { path: string };
+export type ArticlePageQuery = { path: string[] };
 
 export type HomePageProps = { site: Site; notes: Note[] };
 
