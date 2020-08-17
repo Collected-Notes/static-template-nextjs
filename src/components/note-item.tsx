@@ -4,7 +4,7 @@ import styles from "components/note-item.module.css"
 
 export function NoteItem({ note }: { note: Note }) {
   return (
-    <Link href="[path]" as={`/${note.path}`}>
+    <Link href="[...path]" as={`/${note.path}`}>
       <a>
         <article className={styles.note}>
           <h2>{note.title}</h2>
