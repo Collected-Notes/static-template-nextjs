@@ -11,7 +11,7 @@ export const getStaticProps: GetStaticProps<
 > = async ({ params }) => {
   const [{ site }, note] = await Promise.all([
     cn.site(process.env.CN_SITE_PATH),
-    cn.read(process.env.CN_SITE_PATH, params.path),
+    cn.read(process.env.CN_SITE_PATH, params.path.join("/")),
   ]);
   const [links, { body }] = await Promise.all([
     cn.links(site.id, note.id, "json"),
