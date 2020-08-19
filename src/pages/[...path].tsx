@@ -36,10 +36,7 @@ export const getStaticPaths: GetStaticPaths<ArticlePageQuery> = async () => {
   }
 
   return {
-    paths: notes
-      // this will be removed once `/` are supported in the path
-      .filter(note => !note.path.includes("/"))
-      .map((note) => ({ params: { path: note.path.split("/") } })),
+    paths: notes.map((note) => ({ params: { path: note.path.split("/") } })),
     fallback: true,
   };
 };
