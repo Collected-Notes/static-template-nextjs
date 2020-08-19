@@ -21,7 +21,7 @@ There are two ways to use this project.
 
 If you don't want to customize the blog, click on the button below to deploy it to [Vercel](https://vercel.com) and follow the steps.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2FCollected-Notes%2Fstatic-template-nextjs&env=CN_TOKEN,CN_EMAIL,CN_SITE_ID,CN_SITE_PATH,HOST&envDescription=These%20variables%2C%20are%20required%20to%20read%20your%20site%20data%20from%20the%20Collected%20Notes%20API.&envLink=https%3A%2F%2Fcollectednotes.com%2Faccounts%2Fme%2Ftoken)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2FCollected-Notes%2Fstatic-template-nextjs&env=CN_TOKEN,CN_EMAIL,CN_SITE_ID,CN_SITE_PATH&envDescription=These%20variables%2C%20are%20required%20to%20read%20your%20site%20data%20from%20the%20Collected%20Notes%20API.&envLink=https%3A%2F%2Fcollectednotes.com%2Faccounts%2Fme%2Ftoken)
 
 Check the [required environment variables](#required-environment-variables) at the bottom and how to get the values you need.
 
