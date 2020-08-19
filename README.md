@@ -1,36 +1,33 @@
-# Collected Notes - Next.js Static Site Template
+# Collected Notes - Static Site Template with Next.js
 
 Next.js-based template of a static site built using the Collected Notes API.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fsergiodxa%2Fcollected-next-template&env=CN_TOKEN,CN_EMAIL,CN_SITE_ID,CN_SITE_PATH,HOST&envDescription=These%20variables%2C%20are%20required%20to%20read%20your%20site%20data%20from%20the%20Collected%20Notes%20API.&envLink=https%3A%2F%2Fcollectednotes.com%2Faccounts%2Fme%2Ftoken)
-
-**Demo**: https://github.com/sergiodxa/collected-next-template
 
 ## Features
 
 - **Dark Mode Support** - Detect from system preference and per-site support user preference
 - **Links on the note** - List all the links used at the bottom of each note
 - **Search** - Search between all of your notes
-- **Incremental Generation** - Deploy once and get incremental updates on your site
+- **Incremental Regeneration** - Deploy once and get incremental updates on your site
+- **Easy to customize** - Create a new repo based on this way and start customizing the look & feel
 
 ## How to use it
 
 There are two ways to use this project.
 
+- Deploy-only
 - Customize and deploy
-- Deploy only
 
 ### Deploy-only
 
 If you don't want to customize the blog, click on the button below to deploy it to [Vercel](https://vercel.com) and follow the steps.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fsergiodxa%2Fcollected-next-template&env=CN_TOKEN,CN_EMAIL,CN_SITE_ID,CN_SITE_PATH,HOST&envDescription=These%20variables%2C%20are%20required%20to%20read%20your%20site%20data%20from%20the%20Collected%20Notes%20API.&envLink=https%3A%2F%2Fcollectednotes.com%2Faccounts%2Fme%2Ftoken)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2FCollected-Notes%2Fstatic-template-nextjs&env=CN_TOKEN,CN_EMAIL,CN_SITE_ID,CN_SITE_PATH,HOST&envDescription=These%20variables%2C%20are%20required%20to%20read%20your%20site%20data%20from%20the%20Collected%20Notes%20API.&envLink=https%3A%2F%2Fcollectednotes.com%2Faccounts%2Fme%2Ftoken)
 
-Check the [required environment variables](#required-environment-variables) at the bottom and how to get them.
+Check the [required environment variables](#required-environment-variables) at the bottom and how to get the values you need.
 
 ### Customize and deploy
 
-If you prefer to customize the design, you can use this repository as a quick starter, in that case go to this URL https://github.com/sergiodxa/collected-next-template/generate to create a new repository using this one as a template.
+If you prefer to customize the design, you can use this repository as a quick starter, in that case go to this URL https://github.com/Collected-Notes/static-template-nextjs/generate to create a new repository using this one as a template.
 
 Once you have the repo, you can start editing the files, below you can find more documentation on how it works:
 
@@ -66,7 +63,7 @@ Then, there are more folders inside `src`
 
 ## Required Environment Variables
 
-- `CN_TOKEN` - Your Collected Notes API token, get it going to https://collectednotes.com/accounts/me/token.
+- `CN_TOKEN` - Your Collected Notes API token, get it going to https://collectednotes.com/accounts/me/token (you need a Premium account).
 - `CN_EMAIL` - The email address you are using in Collected Notes.
 - `CN_SITE_ID` - The ID of your site in Collected Notes, you can check it adding `.json` at the end of your Collected Notes site (e.g. https://collectednotes.com/blog.json).
 - `CN_SITE_PATH` - The path of your site in Collected Notes (e.g. `blog`).
