@@ -21,7 +21,20 @@ export const getStaticProps: GetStaticProps<
 };
 
 export const getStaticPaths: GetStaticPaths<ArticlePageQuery> = async () => {
-  const { notes } = await cn.site(process.env.CN_SITE_PATH);
+  const { site, notes } = await cn.site(process.env.CN_SITE_PATH);
+
+  // fetch all pages
+  if (notes.length < site.total_notes) {
+    for await (let page of Array.from(
+      { length: Math.ceil(site.total_notes / 40) },
+      (_, index) => index + 1
+    )) {
+      if (page === 1) continue;
+      const res = await cn.site(process.env.CN_SITE_PATH, page);
+      notes.push(...res.notes);
+    }
+  }
+
   return {
     paths: notes
       .filter(note => !note.path.includes("/"))
