@@ -22,6 +22,10 @@
       @apply outline-none shadow-outline;
     }
   }
+
+  small {
+    @apply max-w-screen-md mx-auto px-8 mt-1 text-right block;
+  }
 }
 
 .section {

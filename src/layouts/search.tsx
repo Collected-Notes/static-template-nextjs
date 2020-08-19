@@ -8,6 +8,11 @@ import { NoteItem } from "components/note-item";
 import { FaSearch, FaSpinner } from "react-icons/fa";
 import useDarkMode from "use-dark-mode";
 
+function pluralizeNotes(number: number): string {
+  if (number === 1) return "1 note";
+  return `${number} notes`;
+}
+
 export function SearchLayout({ site }: SearchPageProps) {
   const [value, setValue] = React.useState("");
   const darkMode = useDarkMode(false);
@@ -36,6 +41,15 @@ export function SearchLayout({ site }: SearchPageProps) {
           />
           <FaSearch />
         </div>
+
+        {notes ? (
+          <small>
+            Found {pluralizeNotes(notes.length)} from a total of{" "}
+            {pluralizeNotes(site.total_notes)}.
+          </small>
+        ) : (
+          <small>Total of {pluralizeNotes(site.total_notes)}.</small>
+        )}
       </form>
 
       {(!error && !notes && value !== "") || isValidating ? (
