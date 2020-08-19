@@ -19,7 +19,7 @@
     "@types/react-dom": "^16.9.8",
     "autoprefixer": "^9.8.6",
     "clsx": "^1.1.1",
-    "collected-notes": "^1.5.0",
+    "collected-notes": "^1.6.0",
     "date-fns": "^2.15.0",
     "next": "^9.5.2",
     "postcss-nested": "^4.2.3",
