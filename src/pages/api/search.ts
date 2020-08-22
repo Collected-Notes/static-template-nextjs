@@ -13,7 +13,7 @@ export default async function search(
 ) {
   const { term, page = 1 } = req.query;
   const notes = await cn.search(
-    Number(process.env.CN_SITE_ID),
+    Number(process.env.CN_SITE_PATH),
     unwrap(term),
     unwrap((page as unknown) as number)
   );
