@@ -6,7 +6,11 @@ import { HomeLayout } from "layouts/home";
 const cn = collectedNotes(process.env.CN_EMAIL, process.env.CN_TOKEN);
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-  const { site, notes } = await cn.site(process.env.CN_SITE_PATH);
+  const { site, notes } = await cn.site(
+    process.env.CN_SITE_PATH,
+    1,
+    "site_public"
+  );
 
   // fetch all pages
   if (notes.length < site.total_notes) {
@@ -15,7 +19,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
       (_, index) => index + 1
     )) {
       if (page === 1) continue;
-      const res = await cn.site(process.env.CN_SITE_PATH, page);
+      const res = await cn.site(process.env.CN_SITE_PATH, page, "site_public");
       notes.push(...res.notes);
     }
   }

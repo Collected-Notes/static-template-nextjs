@@ -17,5 +17,5 @@ export default async function search(
     unwrap(term),
     unwrap((page as unknown) as number)
   );
-  res.json(notes.filter((note) => note.visibility === "public"));
+  res.json(notes.filter((note) => note.visibility === "site_public"));
 }
