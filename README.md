@@ -1,6 +1,6 @@
 # Collected Notes - Static Site Template with Next.js
 
-This template is based on the Next.js javascript framework, and allows you to build a static website that can be updated automatically when notes are added or updated on your Collected Notes account.
+This template is based on the Next.js JavaScript framework, and allows you to build a static website that can be updated automatically when notes are added or updated on your Collected Notes account.
 
 ## Features
 
@@ -8,7 +8,7 @@ This template is based on the Next.js javascript framework, and allows you to bu
 - **Dark Mode Support** - Detect from system preference and per-site support user preference.
 - **Search** - Search between all of your notes.
 - **Links on the note** - List all the links used at the bottom of each note.
-- **Easy to customize** - Create a new repo based on this way and start customizing the look & feel.
+- **Easy to customize** - Create a new repo based on this one and start customizing the look & feel.
 
 ## How to create your static website
 
