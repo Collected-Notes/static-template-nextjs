@@ -15,7 +15,8 @@ export default async function search(
   const notes = await cn.search(
     process.env.CN_SITE_PATH,
     unwrap(term),
-    unwrap((page as unknown) as number)
+    unwrap((page as unknown) as number),
+    "public_site"
   );
-  res.json(notes.filter((note) => note.visibility === "public_site"));
+  res.json(notes);
 }
