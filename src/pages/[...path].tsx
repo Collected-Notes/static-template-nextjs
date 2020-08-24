@@ -12,7 +12,6 @@ export const getStaticProps: GetStaticProps<
   const [{ site }, { note, body }, links] = await Promise.all([
     cn.site(process.env.CN_SITE_PATH),
     cn.body(process.env.CN_SITE_PATH, params.path.join("/")),
-    // @ts-expect-error
     cn.links(process.env.CN_SITE_PATH, params.path.join("/"), "json"),
   ]);
   return { props: { note, site, body, links }, revalidate: 1 };
