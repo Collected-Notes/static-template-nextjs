@@ -10,7 +10,7 @@ export const getStaticProps: GetStaticProps<
   ArticlePageQuery
 > = async ({ params }) => {
   const [{ site }, { note, body }, links] = await Promise.all([
-    cn.site(process.env.CN_SITE_PATH),
+    cn.site(process.env.CN_SITE_PATH, 1, "public_site"),
     cn.body(process.env.CN_SITE_PATH, params.path.join("/")),
     cn.links(process.env.CN_SITE_PATH, params.path.join("/"), "json"),
   ]);
