@@ -9,7 +9,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   const { site, notes } = await cn.site(
     process.env.CN_SITE_PATH,
     1,
-    "site_public"
+    "public_site"
   );
 
   // fetch all pages
@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
       (_, index) => index + 1
     )) {
       if (page === 1) continue;
-      const res = await cn.site(process.env.CN_SITE_PATH, page, "site_public");
+      const res = await cn.site(process.env.CN_SITE_PATH, page, "public_site");
       notes.push(...res.notes);
     }
   }

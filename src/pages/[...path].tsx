@@ -9,13 +9,11 @@ export const getStaticProps: GetStaticProps<
   ArticlePageProps,
   ArticlePageQuery
 > = async ({ params }) => {
-  const [{ site }, note] = await Promise.all([
+  const [{ site }, { note, body }, links] = await Promise.all([
     cn.site(process.env.CN_SITE_PATH),
-    cn.read(process.env.CN_SITE_PATH, params.path.join("/")),
-  ]);
-  const [links, { body }] = await Promise.all([
-    cn.links(site.id, note.id, "json"),
-    cn.body(site.id, note.id),
+    cn.body(process.env.CN_SITE_PATH, params.path.join("/")),
+    // @ts-expect-error
+    cn.links(process.env.CN_SITE_PATH, params.path.join("/"), "json"),
   ]);
   return { props: { note, site, body, links }, revalidate: 1 };
 };
@@ -24,7 +22,7 @@ export const getStaticPaths: GetStaticPaths<ArticlePageQuery> = async () => {
   const { site, notes } = await cn.site(
     process.env.CN_SITE_PATH,
     1,
-    "site_public"
+    "public_site"
   );
 
   // fetch all pages
@@ -34,7 +32,7 @@ export const getStaticPaths: GetStaticPaths<ArticlePageQuery> = async () => {
       (_, index) => index + 1
     )) {
       if (page === 1) continue;
-      const res = await cn.site(process.env.CN_SITE_PATH, page, "site_public");
+      const res = await cn.site(process.env.CN_SITE_PATH, page, "public_site");
       notes.push(...res.notes);
     }
   }
