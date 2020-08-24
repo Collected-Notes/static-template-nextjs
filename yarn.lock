@@ -1951,10 +1951,10 @@ clsx@^1.1.1:
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
   integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
 
-collected-notes@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/collected-notes/-/collected-notes-2.0.0.tgz#4cf22dfa375f0406928a8c047b54302e38ae59a8"
-  integrity sha512-NRTm90fZ8CcotOvtJSdnqv7FLUW8Q8Rg9yh6wa7jDns8HWVPnRBTe/AGmizcRfsjwe5TonVT+pUeQ01pEFM8TA==
+collected-notes@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/collected-notes/-/collected-notes-2.0.1.tgz#3bdba89131add09d208d97b44e13a09ad852ecbb"
+  integrity sha512-INeng2BSYlugEOY6nwOvz748F+OO9UIQbgR/rWEqODlxuwmRUX9lUzNpllfwmNkL6CltNZlGEdg/MYxMhSUhcQ==
 
 collection-visit@^1.0.0:
   version "1.0.0"
