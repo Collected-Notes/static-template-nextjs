@@ -33,6 +33,8 @@ These environment variables are:
 - `CN_EMAIL` - The email address you are using for Collected Notes.
 - `CN_SITE_PATH` - The path of your site in Collected Notes (e.g. for https://collectednotes.com/blog use `blog`).
 
+Optionally, you can add the `FEED_HOME_PAGE_URL` environment variable to enable an RSS and JSON feed to work.
+
 ---
 
 ## Customize your static website
