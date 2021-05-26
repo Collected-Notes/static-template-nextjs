@@ -4,6 +4,10 @@ import { DarkModeToggle } from "components/dark-mode-toggle";
 import "styles.css";
 
 export default function App({ Component, pageProps }) {
+  
+  const { site, note } = pageProps; 
+  const baseUrl = process.env.VERCEL_URL || "";
+
   return (
     <>
       <Head>
@@ -11,10 +15,12 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* HTML Meta Tags */}
-        <title>Collected Notes</title>
+        <title>{(note) ? note.title : 
+          ((site) ? site.name : "Collected Notes")}</title>
         <meta
           name="description"
-          content="The simplest, and most powerful note-taking blogging platform."
+          content={(note) ? note.headline : 
+            ((site) ? site.headline : "The simplest, and most powerful note-taking blogging platform.")}
         />
         <meta
           name="image"
@@ -23,23 +29,29 @@ export default function App({ Component, pageProps }) {
         <meta name="keywords" content="notes, blog, note taking, simplicity." />
 
         {/* Google / Search Engine Tags */}
-        <meta itemProp="name" content="Collected Notes" />
+        <meta itemProp="name" content={(note) ? note.title : 
+          (site) ? site.name : "Collected Notes"} />
+
         <meta
           itemProp="description"
-          content="The simplest, and most powerful note-taking blogging platform."
+          content={(note) ? note.headline : 
+            ((site) ? site.headline : "The simplest, and most powerful note-taking blogging platform.")}
         />
         <meta
           itemProp="image"
           content="https://photos.collectednotes.com/embed.png"
         />
 
+        {note && <meta name="publish_date" property="og:publish_date" content={note.created_at}/>}
+
         {/* Facebook Meta Tags */}
-        <meta property="og:url" content="https://collectednotes.com" />
+        <meta property="og:url" content={(note) ? `${baseUrl}/${note.path}` : "https://collectednotes.com"} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Collected Notes" />
+        <meta property="og:title" content={(site) ? site.headline : "https://collectednotes.com"} />
         <meta
           property="og:description"
-          content="The simplest, and most powerful note-taking blogging platform."
+          content={(note) ? note.headline : 
+            ((site) ? site.headline : "The simplest, and most powerful note-taking blogging platform.")}
         />
         <meta
           property="og:image"
@@ -48,10 +60,12 @@ export default function App({ Component, pageProps }) {
 
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Collected Notes" />
+        <meta name="twitter:title" content={(note) ? note.title : 
+          (site) ? site.name : "Collected Notes"} />
         <meta
           name="twitter:description"
-          content="The simplest, and most powerful note-taking blogging platform."
+          content={(note) ? note.headline : 
+            ((site) ? site.headline : "The simplest, and most powerful note-taking blogging platform.")}
         />
         <meta
           name="twitter:image"
@@ -75,6 +89,8 @@ export default function App({ Component, pageProps }) {
           sizes="16x16"
           href="https://static.collectednotes.com/assets/favicon-16x16-11f4353cc4034de36fd7fb85e09898924184fbc090fb7ae1cc4930f5845e4181.png"
         />
+
+        <link rel="canonical" href={(note) ? `${baseUrl}/${note.path}` : "/"}></link>
       </Head>
 
       <main role="document">
