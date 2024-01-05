@@ -13,9 +13,7 @@ export function Header({ name, headline }: { name: string; headline: string }) {
 
       <header className={styles.header}>
         <Link href="/">
-          <a>
-            <h1>{name}</h1>
-          </a>
+          <h1>{name}</h1>
         </Link>
         <p>{headline}</p>
       </header>

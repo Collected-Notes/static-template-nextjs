@@ -13,9 +13,7 @@ export function HomeLayout({ site, notes }: HomePageProps) {
 
       <nav className={styles.nav}>
         <Link href="/search">
-          <a>
-            <FaSearch /> <span>Search</span>
-          </a>
+          <FaSearch /> <span>Search</span>
         </Link>
       </nav>
 

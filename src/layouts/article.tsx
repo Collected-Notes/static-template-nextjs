@@ -35,9 +35,7 @@ export function ArticleLayout({ note, site, body, links }: ArticlePageProps) {
         </time>
 
         <p>
-          <NextLink href="/">
-            <a>{site.name}</a>
-          </NextLink>
+          <NextLink href="/">{site.name}</NextLink>
         </p>
       </footer>
 
